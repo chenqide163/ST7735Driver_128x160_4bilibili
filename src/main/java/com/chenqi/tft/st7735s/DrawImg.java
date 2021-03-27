@@ -46,7 +46,7 @@ public class DrawImg {
         InputStream is = getLcdImg.getClass().getResourceAsStream("/weatherIcon/b_5.gif");
         Image fbImg = javax.imageio.ImageIO.read(is);
         g.drawImage(fbImg, 73, 110, 50, 46, null);
-        
+
         return image;
     }
 
@@ -54,5 +54,31 @@ public class DrawImg {
         //生成天气预报图片
         BufferedImage bufferedImage = getWeatherImg();
         ImageIO.write(bufferedImage, "jpg", new File("D:\\weatherFuture.jpg"));
+
+        bufferedImage = getPoetry();
+        ImageIO.write(bufferedImage, "jpg", new File("D:\\Poetry.jpg"));
+    }
+
+    public static BufferedImage getPoetry() throws IOException {
+        LOG.debug("start to getPoetry ");
+        int width = ST7735sDriver.WIDTH;
+        int height = ST7735sDriver.HEIGHT;
+        BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g = image.createGraphics();
+        g.setFont(new Font("华文新魏", Font.PLAIN, 28));
+        g.setColor(new Color(0x25FF22));
+        g.drawString("离思", 10, 28);
+
+        g.setFont(new Font("华文新魏", Font.PLAIN, 20));
+        g.setColor(new Color(0x64FFE7));
+        g.drawString("元稹", 70, 28);
+
+        g.setFont(new Font("华文新魏", Font.PLAIN, 16));
+        g.setColor(new Color(0xFFAC25));
+        g.drawString("曾经沧海难为水，", 0, 50);
+        g.drawString("除却巫山不是云。", 0, 70);
+        g.drawString("取次花丛懒回顾，", 0, 90);
+        g.drawString("半缘修道半缘君。", 0, 110);
+        return image;
     }
 }

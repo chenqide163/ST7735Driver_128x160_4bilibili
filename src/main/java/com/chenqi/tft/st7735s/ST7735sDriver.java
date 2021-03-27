@@ -4,13 +4,14 @@ import com.pi4j.io.gpio.*;
 import com.pi4j.io.spi.SpiChannel;
 import com.pi4j.io.spi.SpiDevice;
 import com.pi4j.io.spi.SpiFactory;
+import org.apache.log4j.Logger;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 public class ST7735sDriver {
-
+    private static Logger LOG = Logger.getLogger(ST7735SMain.class);
     public static final int HEIGHT = 160;
     public static final int WIDTH = 128;
 
@@ -73,7 +74,7 @@ public class ST7735sDriver {
      * @throws IOException
      */
     public void drawImg16BitColorOptimization(Image inputImage) throws IOException {
-        System.out.println("start to write Lcd Img ，drawImg16BitColorOptimization");
+        LOG.debug("start to write Lcd Img ，drawImg16BitColorOptimization");
 
         BufferedImage bufferedImage = getFitImg(inputImage);
         byte[] colorBytes = new byte[WIDTH * 2];
