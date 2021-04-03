@@ -22,7 +22,7 @@ public class DrawImg {
      * @throws IOException
      */
     public static BufferedImage getWeatherImg() throws IOException {
-        LOG.debug("start to GetSojsonWeatherImg ");
+        System.out.println("start to GetSojsonWeatherImg ");
         int width = ST7735sDriver.WIDTH;
         int height = ST7735sDriver.HEIGHT;
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -75,7 +75,7 @@ public class DrawImg {
      * @throws IOException
      */
     public static BufferedImage getPoetry() {
-        LOG.debug("start to getPoetry ");
+        System.out.println("start to getPoetry ");
         int width = ST7735sDriver.WIDTH;
         int height = ST7735sDriver.HEIGHT;
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
