@@ -10,6 +10,9 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
+/**
+ * ST7735s驱动
+ */
 public class ST7735sDriver {
     private static Logger LOG = Logger.getLogger(ST7735SMain.class);
     public static final int HEIGHT = 160;

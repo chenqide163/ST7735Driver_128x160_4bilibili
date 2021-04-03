@@ -15,10 +15,10 @@ public class ST7735SMain {
 
         //展示天气图片
         ST7735sDriver.getInstance().drawImg16BitColorOptimization(DrawImg.getWeatherImg());
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         //展示诗歌
         ST7735sDriver.getInstance().drawImg16BitColorOptimization(DrawImg.getPoetry());
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         //显示jar包同级目录下的所有图片
         showPicsFromSameFolder();
     }
